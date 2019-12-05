@@ -30,6 +30,12 @@
             <artifactId>reflections</artifactId>
             <version>0.9.10</version>
         </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.12</version>
+        </dependency>
+
     </dependencies>
 
 </project>
