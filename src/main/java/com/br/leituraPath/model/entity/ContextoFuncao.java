@@ -5,7 +5,7 @@ public class ContextoFuncao {
     private String descricao;
     private Sistema sistema;
 
-    public String getNome(String nome) {
+    public String getNome() {
         return this.nome;
     }
 

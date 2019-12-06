@@ -15,7 +15,6 @@ public class ManterFluxoPermissaoUnoNegocio {
             ContextoFuncao contextoFuncao = new ContextoFuncao();
             contextoFuncao.setNome(pathNegocio.obtercontextoFuncaoClass(clazz).nome());
             contextoFuncao.setDescricao(pathNegocio.obtercontextoFuncaoClass(clazz).descricao());
-            System.out.println(contextoFuncao);
         }
     }
 }
