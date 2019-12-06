@@ -1,7 +1,8 @@
 package com.br.leituraPath.business;
 
 
-import com.br.leituraPath.model.entity.ContextoFuncao;
+import com.br.leituraPath.model.annotation.ContextoFuncao;
+import com.br.leituraPath.model.entity.FuncaoSistema;
 
 import java.util.List;
 
@@ -12,9 +13,13 @@ public class ManterFluxoPermissaoUnoNegocio {
         LeituraFormatacaoPathNegocio pathNegocio = new LeituraFormatacaoPathNegocio();
 
         for (Class clazz: pathNegocio.obterListaClassesProjeto(diretorio)){
-            ContextoFuncao contextoFuncao = new ContextoFuncao();
-            contextoFuncao.setNome(pathNegocio.obtercontextoFuncaoClass(clazz).nome());
-            contextoFuncao.setDescricao(pathNegocio.obtercontextoFuncaoClass(clazz).descricao());
+            List<FuncaoSistema> funcoesParaCadastro = montarFuncaoSistema(clazz);
         }
+    }
+
+    private List<FuncaoSistema> montarFuncaoSistema(Class clazz) {
+        LeituraFormatacaoPathNegocio pathNegocio = new LeituraFormatacaoPathNegocio();
+        ContextoFuncao contextoFuncao =  pathNegocio.obtercontextoFuncaoClass(clazz);
+        ContextoFuncao funcao = new ContextoFuncao.ContextoFuncaoBuilder().
     }
 }

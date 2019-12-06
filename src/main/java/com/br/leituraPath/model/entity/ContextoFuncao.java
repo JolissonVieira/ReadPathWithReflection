@@ -28,4 +28,36 @@ public class ContextoFuncao {
     public void setSistema(Sistema sistema) {
         this.sistema = sistema;
     }
+
+    private ContextoFuncao(ContextoFuncaoBuilder builder) {
+        this.nome = builder.nome;
+        this.descricao = builder.descricao;
+        this.sistema = builder.sistema;
+    }
+
+    public static class ContextoFuncaoBuilder{
+
+        private String nome;
+        private String descricao;
+        private Sistema sistema;
+
+        public ContextoFuncaoBuilder setNome(String nome) {
+            this.nome = nome;
+            return this;
+        }
+
+        public ContextoFuncaoBuilder setDescricao(String descricao) {
+            this.descricao = descricao;
+            return this;
+        }
+
+        public ContextoFuncaoBuilder setSistema(Sistema sistema) {
+            this.sistema = sistema;
+            return this;
+        }
+
+        public ContextoFuncao build(){
+            return  new ContextoFuncao(this);
+        }
+    }
 }

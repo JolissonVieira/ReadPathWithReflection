@@ -10,7 +10,6 @@ public class LeituraFacadeTeste {
     public static void main(String[] args) {
 
         ManterFluxoPermissaoUnoNegocio manterFluxoPermissaoUnoNegocio = new ManterFluxoPermissaoUnoNegocio();
-
         manterFluxoPermissaoUnoNegocio.cadastrarPermissoesUno("com.br.leituraPath.controllerProject");
 
     }

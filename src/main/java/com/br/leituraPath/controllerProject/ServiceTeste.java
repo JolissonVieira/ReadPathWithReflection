@@ -19,7 +19,7 @@ public class ServiceTeste   {
 
     @POST
     @Path("consultar")
-    @FuncaoSistema(nomeFuncao = "SERVICE_TESTE_consultar",descFuncao = "Consultar Dados da Service")
+    @FuncaoSistema(nomeFuncao = "SERVICE_TESTE_consultar", descFuncao = "Consultar Dados da Service")
     public Response consultar() {
         return Response.ok().build();
     }
