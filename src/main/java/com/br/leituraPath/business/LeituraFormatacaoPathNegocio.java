@@ -44,8 +44,13 @@ public class LeituraFormatacaoPathNegocio {
         return method.getAnnotations()[0].annotationType().getSimpleName();
     }
 
-    public Path obterPathMethod( Method method){
-        return method.getAnnotation(Path.class);
+    public String obterPathMethod( Method method){
+        return substituirParametrosParaAlfanumerico(
+                obterTipoServico(method) + " " + method.getAnnotation(Path.class).value());
+    }
+
+    public ContextoFuncao obtercontextoFuncaoMetodo(Method method){
+        return (ContextoFuncao) method.getAnnotation(ContextoFuncao.class);
     }
 
 }

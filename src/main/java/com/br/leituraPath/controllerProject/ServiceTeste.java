@@ -3,7 +3,6 @@ package com.br.leituraPath.controllerProject;
 import com.br.leituraPath.model.annotation.ContextoFuncao;
 import com.br.leituraPath.model.annotation.FuncaoSistema;
 import com.br.leituraPath.model.annotation.Perfil;
-import io.swagger.annotations.ApiOperation;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,6 +18,7 @@ public class ServiceTeste   {
 
     @POST
     @Path("consultar")
+    @ContextoFuncao(nome = "Contexto Função no Método", descricao = "Contexto do Método")
     @FuncaoSistema(nomeFuncao = "SERVICE_TESTE_consultar", descFuncao = "Consultar Dados da Service")
     public Response consultar() {
         return Response.ok().build();
@@ -26,7 +26,7 @@ public class ServiceTeste   {
 
     @GET
     @Path("visualizar/{id}")
-    @FuncaoSistema(nomeFuncao = "SERVICE_TESTE_visualizar",descFuncao = "Consultar Dados da Service")
+    @FuncaoSistema(nomeFuncao = "SERVICE_TESTE_visualizar", descFuncao = "Consultar Dados da Service")
     public Response visualizar(@PathParam("id") Integer idChamado) {
         return Response.ok().build();
     }
