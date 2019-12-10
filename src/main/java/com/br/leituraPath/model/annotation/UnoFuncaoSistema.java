@@ -7,7 +7,8 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ContextoFuncao {
-    public String nome();
-    public String descricao();
+public @interface UnoFuncaoSistema {
+    public String nomeFuncao();
+    public String descFuncao();
+
 }

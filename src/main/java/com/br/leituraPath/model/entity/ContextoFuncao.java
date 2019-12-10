@@ -1,9 +1,8 @@
 package com.br.leituraPath.model.entity;
 
-public class ContextoFuncaoEntity {
+public class ContextoFuncao {
     private String nome;
     private String descricao;
-    private SistemaEntity sistemaEntity;
 
     public String getNome() {
         return this.nome;
@@ -21,24 +20,15 @@ public class ContextoFuncaoEntity {
         this.descricao = descricao;
     }
 
-    public SistemaEntity getSistemaEntity() {
-        return sistemaEntity;
-    }
 
-    public void setSistemaEntity(SistemaEntity sistemaEntity) {
-        this.sistemaEntity = sistemaEntity;
-    }
-
-    public ContextoFuncaoEntity(String nome, String descricao, SistemaEntity sistemaEntity) {
+    public ContextoFuncao(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
-        this.sistemaEntity = sistemaEntity;
     }
 
     public static class Builder{
         private String nome;
         private String descricao;
-        private SistemaEntity sistemaEntity;
 
         public Builder() {
         }
@@ -53,13 +43,8 @@ public class ContextoFuncaoEntity {
             return this;
         }
 
-        public Builder setSistemaEntity(SistemaEntity sistemaEntity) {
-            this.sistemaEntity = sistemaEntity;
-            return this;
-        }
-
-        public ContextoFuncaoEntity build(){
-            return new ContextoFuncaoEntity(nome,descricao, sistemaEntity);
+        public ContextoFuncao build(){
+            return new ContextoFuncao(nome,descricao);
         }
     }
 }

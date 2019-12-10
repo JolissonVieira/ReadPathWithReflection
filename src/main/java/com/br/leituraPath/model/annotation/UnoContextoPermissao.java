@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Perfil {
-    public String[] nome();
+public @interface UnoContextoPermissao {
+    public String nomeContexto();
+    public String descContexto();
+    public String nomePermissao();
+    public String descPermissao();
 }

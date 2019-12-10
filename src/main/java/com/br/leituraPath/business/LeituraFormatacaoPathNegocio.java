@@ -1,8 +1,8 @@
 package com.br.leituraPath.business;
 
-import com.br.leituraPath.model.annotation.ContextoFuncao;
-import com.br.leituraPath.model.annotation.FuncaoSistema;
-import com.br.leituraPath.model.annotation.Perfil;
+import com.br.leituraPath.model.annotation.UnoContextoPermissao;
+import com.br.leituraPath.model.annotation.UnoFuncaoSistema;
+import com.br.leituraPath.model.annotation.UnoPerfil;
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
@@ -32,12 +32,12 @@ public class LeituraFormatacaoPathNegocio {
         return (Path) clazz.getDeclaredAnnotation(Path.class);
     }
 
-    public ContextoFuncao obtercontextoFuncaoClass(Class clazz){
-        return (ContextoFuncao) clazz.getAnnotation(ContextoFuncao.class);
+    public UnoContextoPermissao obtercontextoFuncaoClass(Class clazz){
+        return (UnoContextoPermissao) clazz.getAnnotation(UnoContextoPermissao.class);
     }
 
-    public FuncaoSistema obterFuncaoSistema( Method method){
-        return (FuncaoSistema) method.getAnnotation(FuncaoSistema.class);
+    public UnoFuncaoSistema obterFuncaoSistema(Method method){
+        return (UnoFuncaoSistema) method.getAnnotation(UnoFuncaoSistema.class);
     }
 
     public String obterTipoServico(Method method){
@@ -49,8 +49,12 @@ public class LeituraFormatacaoPathNegocio {
                 obterTipoServico(method) + " " + method.getAnnotation(Path.class).value());
     }
 
-    public ContextoFuncao obtercontextoFuncaoMetodo(Method method){
-        return (ContextoFuncao) method.getAnnotation(ContextoFuncao.class);
+    public UnoContextoPermissao obtercontextoFuncaoMetodo(Method method){
+        return (UnoContextoPermissao) method.getAnnotation(UnoContextoPermissao.class);
+    }
+
+    public UnoPerfil obterPerfis(Class clazz){
+        return (UnoPerfil) clazz.getAnnotation(UnoPerfil.class);
     }
 
 }
